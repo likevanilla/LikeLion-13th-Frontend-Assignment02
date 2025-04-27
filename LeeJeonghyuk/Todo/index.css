@@ -1,0 +1,52 @@
+body {
+    background-color:lightsteelblue;
+    display: block;
+    justify-items: center;
+    
+}
+
+#todoBody {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5%;
+}
+
+#todoHead {
+    display: inline-flex;
+    margin: 10px 10px;
+    border: 3px solid #1864ab
+}
+
+#todoHead:focus-within {
+    box-shadow: 0 0 3px gray;
+}
+
+#todoInput {
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 30px;
+}
+
+#addButton {
+    width: 100px;
+    height: 35px;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    border-left: 3px solid #1864ab;
+    background-color: #1864ab;
+    color: white;
+}
+
+#todoList li::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-top: 5px;
+    
+}
