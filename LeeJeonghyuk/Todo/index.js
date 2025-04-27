@@ -25,10 +25,10 @@ function renderTodos() {
     });
 }
 
-function removeTodo(index) {
-    todos.splice(index, 1);
-    renderTodos();
-}
+// function removeTodo(index) {
+//     todos.splice(index, 1);
+//     renderTodos();
+// }
 
 //js 1번 조건
 function enterKey() {
