@@ -6,23 +6,15 @@
     <script defer src="index.js"></script>
     <link rel="stylesheet" href="index.css" />
     <title>Todo List</title>
-
-    <script>
-    function enterKey() {
-        if (window.event.keyCode == 13) {
-            addTodo();
-        }
-    }
-</script>
 </head>
 <body>
-    <h2>할 일 목록</h2>
+    <h2>Todo List</h2>
+    <div id="battery">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
     <div id="todoBody">
         <div id="todoHead">
             <input type="text" id="todoInput" onkeyup="enterKey();" placeholder="할 일을 입력하세요" />
             <button onclick="addTodo()" id="addButton">추가</button>
         </div>
-        <hr />
         <ul id="todoList"></ul>
     </div> 
 </body>
