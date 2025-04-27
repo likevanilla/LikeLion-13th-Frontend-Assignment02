@@ -49,9 +49,9 @@ body {
     list-style: none;
     border-top: 3px solid rgb(136, 208, 28);
     margin-left: -40px;
-    padding: 20px;
+    padding: 10px;
     font-size: large;
-
+    position: relative;
 }
 
 #todoList input {
@@ -66,4 +66,22 @@ body {
 
 #battery {
     background-color: whitesmoke;
+    color: gray;
+}
+
+.todoLists:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: width 1s;
+    background-color: rgb(136, 208, 28);
+    user-select: none;
+    pointer-events: none;
+}
+
+.todoLists:active::after {
+    width: 100%;
 }

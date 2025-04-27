@@ -13,22 +13,45 @@ function addTodo() {
 function renderTodos() {
     const list = document.getElementById("todoList");
     list.innerHTML = "";
+
     todos.forEach((todo, index) => {
         const li = document.createElement("li");
+        li.setAttribute("class", "todoLists");
+
         //js 2번 조건
         const checkbox = document.createElement("input");
         checkbox.setAttribute("type", "checkbox");
-        checkbox.textContent = todo;
-        li.append(checkbox, checkbox.textContent);
-        // li.onclick = () => removeTodo(index);
+
+        const text = document.createTextNode(todo);
+        
+        li.append(checkbox, text);
         list.appendChild(li);
+
+        onLongClick(li, 1000, () => {
+            removeTodo(index);
+        });
     });
 }
 
-// function removeTodo(index) {
-//     todos.splice(index, 1);
-//     renderTodos();
-// }
+function removeTodo(index) {
+    todos.splice(index, 1);
+    renderTodos();
+}
+
+// 할 일 삭제 기능을 다른 방식으로 구현
+// 롱 클릭 이벤트
+function onLongClick($target, duration, callback) {
+    let timer;
+    $target.onmousedown = () => {
+        timer = setTimeout(callback, duration);
+    };
+    $target.onmouseup = () => {
+        clearTimeout(timer);
+    };
+    $target.onmouseleave = () => {
+        clearTimeout(timer);
+    };
+}
 
 //js 1번 조건
 function enterKey() {
@@ -36,3 +59,6 @@ function enterKey() {
         addTodo();
     }
 }
+
+
+
