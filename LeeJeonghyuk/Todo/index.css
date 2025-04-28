@@ -85,3 +85,13 @@ body {
 .todoLists:active::after {
     width: 100%;
 }
+
+#jsQuiz {
+    background-color: whitesmoke;
+    color: black;
+}
+
+#jsQuiz:visited {
+    background-color: whitesmoke;
+    color: black;
+}
